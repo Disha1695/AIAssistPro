@@ -33,7 +33,7 @@ export default function Income() {
     <Section id="income" className="bg-app">
       <Container>
         {/* Put your money to work */}
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 p-8 text-white shadow-3d sm:p-12">
+        <div className="relative isolate overflow-hidden rounded-3xl border border-white/10 p-8 text-white shadow-3d sm:p-12">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,#0a1733_0%,#13316f_55%,#0a1733_100%)]" />
           <div className="absolute -right-16 -top-16 -z-10 h-64 w-64 rounded-full bg-brand/25 blur-3xl" />
           <div className="grid items-center gap-8 lg:grid-cols-2">
