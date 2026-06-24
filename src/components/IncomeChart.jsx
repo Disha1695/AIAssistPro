@@ -1,6 +1,6 @@
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -8,13 +8,14 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { incomeChartData } from '../data'
+import { useTheme } from '../theme'
 
 function CustomTooltip({ active, payload, label }) {
   if (active && payload && payload.length) {
     return (
-      <div className="rounded-lg border border-gold/40 bg-navy-900 px-3 py-2 shadow-glow-gold">
-        <p className="text-xs text-slate-400">{label}</p>
-        <p className="text-sm font-bold text-gold">${payload[0].value.toFixed(2)} USDT</p>
+      <div className="rounded-lg border border-line bg-surface px-3 py-2 shadow-lift">
+        <p className="text-xs text-muted">{label}</p>
+        <p className="text-sm font-semibold text-ink">${payload[0].value.toFixed(2)} USDT</p>
       </div>
     )
   }
@@ -22,42 +23,47 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 export default function IncomeChart() {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+  const line = isDark ? '#38bdf8' : '#2563eb'
+  const grid = isDark ? '#212c47' : '#e2e8f0'
+  const axis = isDark ? '#94a3b8' : '#64748b'
+
   return (
     <div className="card p-5">
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-5 flex items-start justify-between">
         <div>
-          <h2 className="section-title text-white">
-            Mining Income <span className="text-gold">— Last 7 Days</span>
-          </h2>
-          <p className="text-xs text-slate-400">Daily payouts in USDT</p>
+          <h2 className="section-title">Mining Income</h2>
+          <p className="text-xs text-muted">Daily payouts over the last 7 days (USDT)</p>
         </div>
-        <span className="rounded-full border border-electric/30 bg-electric/10 px-3 py-1 text-xs font-semibold text-electric">
-          +12.4% ▲
+        <span className="rounded-md bg-positive/10 px-2.5 py-1 text-xs font-semibold text-positive">
+          +12.4%
         </span>
       </div>
 
       <div className="h-64 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={incomeChartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+          <AreaChart data={incomeChartData} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
             <defs>
-              <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#FFD700" />
-                <stop offset="100%" stopColor="#FFA500" />
+              <linearGradient id="incomeFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={line} stopOpacity={0.25} />
+                <stop offset="100%" stopColor={line} stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#16234f" />
-            <XAxis dataKey="day" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-            <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#FFD700', strokeWidth: 1 }} />
-            <Line
+            <CartesianGrid strokeDasharray="3 3" stroke={grid} vertical={false} />
+            <XAxis dataKey="day" stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
+            <YAxis stroke={axis} fontSize={12} tickLine={false} axisLine={false} />
+            <Tooltip content={<CustomTooltip />} cursor={{ stroke: line, strokeWidth: 1, strokeOpacity: 0.4 }} />
+            <Area
               type="monotone"
               dataKey="income"
-              stroke="url(#goldLine)"
-              strokeWidth={3}
-              dot={{ fill: '#FFD700', r: 4, strokeWidth: 0 }}
-              activeDot={{ r: 6, fill: '#FFD700', stroke: '#0a0f2e', strokeWidth: 2 }}
+              stroke={line}
+              strokeWidth={2.5}
+              fill="url(#incomeFill)"
+              dot={{ fill: line, r: 3, strokeWidth: 0 }}
+              activeDot={{ r: 5, fill: line, stroke: isDark ? '#080d19' : '#ffffff', strokeWidth: 2 }}
             />
-          </LineChart>
+          </AreaChart>
         </ResponsiveContainer>
       </div>
     </div>

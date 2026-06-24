@@ -9,9 +9,7 @@ export default function TransactionHistory() {
   const [filter, setFilter] = useState('All')
 
   const rows =
-    filter === 'All'
-      ? fullTransactions
-      : fullTransactions.filter((t) => t.type.includes(filter))
+    filter === 'All' ? fullTransactions : fullTransactions.filter((t) => t.type.includes(filter))
 
   return (
     <div className="animate-fade-in space-y-6">
@@ -22,10 +20,10 @@ export default function TransactionHistory() {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
+            className={`rounded-lg px-3.5 py-1.5 text-xs font-medium transition ${
               filter === f
-                ? 'bg-gold text-navy-900 shadow-glow-gold'
-                : 'border border-electric/30 text-slate-300 hover:bg-electric/10 hover:text-electric'
+                ? 'bg-brand text-white'
+                : 'border border-line bg-surface text-muted hover:text-ink'
             }`}
           >
             {f}

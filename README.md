@@ -40,13 +40,26 @@ npm run preview
 | Profile | Account details + security |
 | Logout | Logout confirmation |
 
+## Landing page
+A full marketing landing page (built from the AIDA pitch deck) lives in its own
+folder and is shown first. Its **Get Started / Start Now / Login** buttons launch
+the dashboard; the dashboard logo and Logout return to the landing page.
+
+Sections: Hero · About · Vision & Mission · What is Crypto Mining · Benefits ·
+Put Your Money to Work · Income Types · Matching Capping · Mining Packages ·
+Working 3X vs Non-Working 2X · Joining Options · Upcoming Projects · Terms · CTA.
+All sections support light & dark mode with 3D tilt, glass cards and the USDT coin.
+
 ## Structure
 ```
 src/
-├── App.jsx              # Layout + page router (state-based)
+├── App.jsx              # Landing ⇄ dashboard routing (state-based)
+├── theme.jsx           # Light/dark theme provider
 ├── data.js             # All dummy/static data
-├── components/         # Sidebar, Navbar, cards, chart, table, etc.
-└── pages/              # One file per sidebar section
+├── components/         # Shared: Sidebar, Navbar, cards, Tilt, Coin, chart...
+├── landing/            # Landing page (Navbar, Hero, About, Mining, Income,
+│                       #   Packages, Projects, Footer, ui helpers)
+└── pages/              # One file per dashboard sidebar section
 ```
 
 All data is static/dummy — no backend required.
