@@ -7,9 +7,9 @@ export default function Logout({ onCancel, onConfirm }) {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-negative/10 text-negative">
           <LogOut size={24} />
         </div>
-        <h2 className="mt-4 text-lg font-bold text-ink">Log out of AIDA?</h2>
+        <h2 className="mt-4 text-lg font-bold text-ink">Log out of Brinx?</h2>
         <p className="mt-1 text-sm text-muted">
-          You will be securely signed out of your AI Digital Assets dashboard.
+          You will be securely signed out of your Brinx dashboard.
         </p>
         <div className="mt-6 flex gap-3">
           <button onClick={onCancel} className="btn-ghost flex-1">

@@ -67,7 +67,7 @@ export default function Mining() {
           <SectionHeading
             kicker="Benefits"
             title="Why mine with"
-            highlight="AI Digital Assets"
+            highlight="Brinx"
             subtitle="Powering the digital future. Rewarding today."
           />
         </Reveal>

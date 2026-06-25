@@ -1,11 +1,11 @@
-// Static / dummy data for the AIDA dashboard
+// Static / dummy data for the Brinx dashboard
 
 export const user = {
   name: 'John Doe',
   wallet: '0x1234...abcd',
   fullWallet: '0x1234567890abcdef1234567890abcdef0000abcd',
-  referralCode: 'AIDA-JD-7821',
-  referralLink: 'https://aidigitalassets.world/ref/AIDA-JD-7821',
+  referralCode: 'BRINX-JD-7821',
+  referralLink: 'https://brinx.world/ref/BRINX-JD-7821',
   joinedOn: '12 Jan 2026',
   rank: 'Premium Miner',
 }

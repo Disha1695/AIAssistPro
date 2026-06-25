@@ -1,6 +1,6 @@
-# AI Digital Assets (AIDA) — Platform Overview & Flow
+# Brinx — Platform Overview & Flow
 
-> **Empowering the Digital Future** — a next-generation crypto-mining investment platform with an AI-powered dashboard, referral/binary income engine, and USDT (BEP20) deposits & withdrawals.
+> **AI Crypto Mining** — a next-generation crypto-mining investment platform with an AI-powered dashboard, referral/binary income engine, and USDT (BEP20) deposits & withdrawals.
 
 This document explains, in plain language, **what the platform does, how money flows through it, and how the system is built end-to-end** — so it can be walked through with a client in a single read.
 
@@ -8,7 +8,7 @@ This document explains, in plain language, **what the platform does, how money f
 
 ## 1. What We Are Building
 
-AIDA is a **crypto-mining + network-marketing (MLM) investment platform**. A user deposits **USDT**, activates a **mining package**, and then earns income in three ways:
+Brinx is a **crypto-mining + network-marketing (MLM) investment platform**. A user deposits **USDT**, activates a **mining package**, and then earns income in three ways:
 
 1. **Daily Mining Income** — a fixed daily % on the active package.
 2. **Direct Sponsor Income** — a commission for referring new investors.
@@ -62,7 +62,7 @@ These are the core rules the platform enforces (sourced from the company plan):
 ```
                          ┌─────────────────────────────────────────────┐
                          │              LANDING PAGE                    │
-                         │  Learn about AIDA → "Get Started / Login"    │
+                         │  Learn about Brinx → "Get Started / Login"    │
                          └───────────────────────┬─────────────────────┘
                                                  │
                           ┌──────────────────────▼──────────────────────┐
@@ -243,4 +243,4 @@ As per the company plan, future modules include: **Forex Broker House, Advanced 
 
 ---
 
-*AI Digital Assets — Building Wealth. Powered by AI.* · `www.aidigitalassets.world`
+*Brinx — Building Wealth. Powered by AI.* · `www.brinx.world`

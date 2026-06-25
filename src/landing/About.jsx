@@ -19,7 +19,7 @@ export default function About() {
             kicker="About Us"
             title="The next generation of"
             highlight="crypto mining"
-            subtitle="AI Digital Assets combines high-performance mining infrastructure, real-time analytics and secure systems to optimize digital asset generation — with a global network transforming the future of digital wealth creation."
+            subtitle="Brinx combines high-performance mining infrastructure, real-time analytics and secure systems to optimize digital asset generation — with a global network transforming the future of digital wealth creation."
           />
         </Reveal>
 

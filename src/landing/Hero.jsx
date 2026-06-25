@@ -62,12 +62,12 @@ export default function Hero({ onLaunch }) {
         {/* copy */}
         <div className="text-ink dark:text-white">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-soft dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:shadow-none">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" /> Empowering the Digital Future
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" /> AI-Powered Crypto Mining
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
             Welcome to <br />
-            <span className="text-gradient-gold">AI Digital Assets</span>
+            <span className="text-gradient-gold">Brinx.world</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base font-medium leading-relaxed text-ink/80 dark:font-normal dark:text-white/75 sm:text-lg">

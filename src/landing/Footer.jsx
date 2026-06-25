@@ -20,7 +20,7 @@ export default function Footer({ onLaunch }) {
                 <Coin size={72} />
               </div>
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Invest in <span className="text-gradient-gold">AI Digital Assets</span> Today!
+                Invest in <span className="text-gradient-gold">Brinx</span> Today!
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-white/70">
                 Building wealth. Powered by AI. Start your mining journey from just $15.
@@ -47,9 +47,9 @@ export default function Footer({ onLaunch }) {
           <Logo />
           <div className="flex items-center gap-2 text-sm text-muted">
             <Globe size={15} className="text-brand" />
-            <span className="font-medium text-ink">www.aidigitalassets.world</span>
+            <span className="font-medium text-ink">www.Brinx.world</span>
           </div>
-          <p className="text-xs text-muted">© 2026 AI Digital Assets · All rights reserved.</p>
+          <p className="text-xs text-muted">© 2026 Brinx · All rights reserved.</p>
         </Container>
       </div>
     </footer>

@@ -63,7 +63,7 @@ export default function App() {
 
         <main className="px-4 py-6 sm:px-6 lg:px-8">
           <div className="mb-4 flex items-center gap-2 text-xs text-muted">
-            <span>AIDA</span>
+            <span>Brinx</span>
             <span>/</span>
             <span className="font-medium text-ink">{LABELS[active] ?? 'Dashboard'}</span>
           </div>
@@ -81,8 +81,8 @@ export default function App() {
           )}
 
           <footer className="mt-12 border-t border-line pt-6 text-center text-xs text-muted">
-            © 2026 AI Digital Assets · Empowering the Digital Future ·{' '}
-            <span className="text-brand">www.aidigitalassets.world</span>
+            © 2026 Brinx · AI Crypto Mining ·{' '}
+            <span className="text-brand">Brinx.world</span>
           </footer>
         </main>
       </div>

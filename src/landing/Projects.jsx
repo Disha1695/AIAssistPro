@@ -29,7 +29,7 @@ export default function Projects() {
     <Section id="projects" className="bg-app">
       <Container>
         <Reveal>
-          <SectionHeading kicker="Upcoming Projects" title="The roadmap ahead for" highlight="AIDA" />
+          <SectionHeading kicker="Upcoming Projects" title="The roadmap ahead for" highlight="Brinx" />
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

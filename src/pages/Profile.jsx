@@ -45,7 +45,7 @@ export default function Profile() {
       </div>
 
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Field icon={Mail} label="Email" value="john.doe@aidigitalassets.world" />
+        <Field icon={Mail} label="Email" value="john.doe@brinx.world" />
         <Field icon={Hash} label="Referral Code" value={user.referralCode} mono />
         <Field icon={Wallet} label="Wallet Address (BEP20)" value={user.fullWallet} mono />
         <Field icon={Calendar} label="Joined On" value={user.joinedOn} />
