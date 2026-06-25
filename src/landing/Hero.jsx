@@ -20,7 +20,7 @@ const STATS = [
 function FloatCard({ className, title, value, accent }) {
   return (
     <div
-      className={`absolute rounded-2xl border border-line bg-surface/85 px-4 py-3 shadow-lift backdrop-blur dark:border-white/15 dark:bg-white/10 dark:text-white dark:shadow-3d ${className}`}
+      className={`absolute rounded-2xl border border-line bg-surface px-4 py-3 shadow-lift dark:border-white/15 dark:bg-white/10 dark:text-white dark:shadow-3d dark:backdrop-blur ${className}`}
     >
       <p className="text-[11px] uppercase tracking-wider text-muted dark:text-white/60">{title}</p>
       <p className={`text-lg font-bold ${accent}`}>{value}</p>
@@ -31,23 +31,22 @@ function FloatCard({ className, title, value, accent }) {
 export default function Hero({ onLaunch }) {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* backdrop — premium light by day, deep navy by night */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#eef3ff_0%,#dce7ff_48%,#eaf1ff_100%)] dark:bg-[linear-gradient(135deg,#070d20_0%,#0e1f4d_45%,#08122e_100%)]" />
-      <div className="absolute -left-20 top-10 -z-10 h-72 w-72 rounded-full bg-brand/25 blur-3xl dark:bg-brand/25" />
-      <div className="absolute right-0 top-1/3 -z-10 h-72 w-72 rounded-full bg-gold/20 blur-3xl dark:bg-gold/15" />
-      <div className="absolute bottom-0 left-1/2 -z-10 h-64 w-64 rounded-full bg-tether/15 blur-3xl" />
-      {/* faint grid (light) */}
+      {/* backdrop — light & professional by day, deep navy by night (matches the sections in each mode) */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#e8edf6_0%,#dbe5f4_55%,#e8edf6_100%)] dark:bg-[linear-gradient(180deg,#070b17_0%,#0a1124_55%,#070b17_100%)]" />
+      <div className="absolute -left-20 top-10 -z-10 h-72 w-72 rounded-full bg-brand/20 blur-3xl dark:bg-brand/15" />
+      <div className="absolute right-0 top-1/3 -z-10 h-72 w-72 rounded-full bg-gold/15 blur-3xl dark:bg-gold/10" />
+      <div className="absolute bottom-0 left-1/2 -z-10 h-64 w-64 rounded-full bg-tether/15 blur-3xl dark:bg-tether/[0.07]" />
+      {/* faint grid — blue lines by day, white lines by night */}
       <div
-        className="absolute inset-0 -z-10 opacity-60 dark:hidden"
+        className="absolute inset-0 -z-10 opacity-50 dark:hidden"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(37,99,235,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.10) 1px,transparent 1px)',
+            'linear-gradient(rgba(37,99,235,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.12) 1px,transparent 1px)',
           backgroundSize: '44px 44px',
           maskImage: 'radial-gradient(circle at 70% 10%, black, transparent 75%)',
           WebkitMaskImage: 'radial-gradient(circle at 70% 10%, black, transparent 75%)',
         }}
       />
-      {/* faint grid (dark) */}
       <div
         className="absolute inset-0 -z-10 hidden opacity-20 dark:block"
         style={{
@@ -62,7 +61,7 @@ export default function Hero({ onLaunch }) {
       <Container className="relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
         {/* copy */}
         <div className="text-ink dark:text-white">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-surface/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand backdrop-blur dark:border-white/15 dark:bg-white/10 dark:text-white/80">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-soft dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:shadow-none">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" /> Empowering the Digital Future
           </span>
 
@@ -71,7 +70,7 @@ export default function Hero({ onLaunch }) {
             <span className="text-gradient-gold">AI Digital Assets</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted dark:text-white/70 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base font-medium leading-relaxed text-ink/80 dark:font-normal dark:text-white/75 sm:text-lg">
             A next-generation crypto mining platform powered by advanced blockchain technology and
             intelligent automation — built for reliability, transparency and real digital wealth.
           </p>
@@ -82,7 +81,7 @@ export default function Hero({ onLaunch }) {
             </button>
             <a
               href="#about"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-surface/70 px-5 py-2.5 text-sm font-semibold text-ink backdrop-blur transition hover:bg-elevated dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-surface px-5 py-2.5 text-sm font-semibold text-ink shadow-soft transition hover:bg-elevated dark:border-white/20 dark:bg-white/10 dark:text-white dark:shadow-none dark:hover:bg-white/20"
             >
               <PlayCircle size={18} /> How it works
             </a>
@@ -92,7 +91,7 @@ export default function Hero({ onLaunch }) {
             {PILLS.map((p) => (
               <span
                 key={p.label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-3 py-1.5 text-xs font-medium text-ink backdrop-blur dark:border-white/15 dark:bg-white/5 dark:text-white/80"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold text-ink shadow-soft dark:border-white/15 dark:bg-white/5 dark:font-medium dark:text-white/85 dark:shadow-none"
               >
                 <p.icon size={14} className="text-gold" /> {p.label}
               </span>
@@ -117,14 +116,14 @@ export default function Hero({ onLaunch }) {
       </Container>
 
       {/* stat strip */}
-      <div className="border-t border-line bg-surface/50 backdrop-blur dark:border-white/10 dark:bg-white/5">
+      <div className="border-y border-line bg-surface/60 backdrop-blur dark:border-white/10 dark:bg-white/5">
         <Container className="grid grid-cols-2 gap-4 py-6 sm:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
               <p className="text-2xl font-extrabold tracking-tight text-ink dark:text-white sm:text-3xl">
                 {s.value}
               </p>
-              <p className="mt-0.5 text-xs uppercase tracking-wider text-muted dark:text-white/55">
+              <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-muted dark:text-white/55">
                 {s.label}
               </p>
             </div>
