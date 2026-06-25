@@ -11,10 +11,10 @@ const PILLS = [
 ]
 
 const STATS = [
-  { value: '$15', label: 'Min. to start' },
-  { value: '1.5%', label: 'Daily income' },
-  { value: '200%', label: 'Total ROI' },
-  { value: '24/7', label: 'AI mining' },
+  { value: '24/7', label: 'AI Mining' },
+  { value: '100%', label: 'Automated' },
+  { value: 'Live', label: 'Analytics' },
+  { value: 'USDT', label: 'Secure Payouts' },
 ]
 
 function FloatCard({ className, title, value, accent }) {
@@ -107,8 +107,8 @@ export default function Hero({ onLaunch }) {
               <div className="absolute h-72 w-72 animate-spin-slow rounded-full border border-dashed border-brand/25 dark:border-white/15" />
               <div className="absolute h-56 w-56 rounded-full border border-brand/15 dark:border-white/10" />
               <Coin size={184} />
-              <FloatCard className="left-0 top-6" title="Daily Income" value="+$5.00" accent="text-emerald-600 dark:text-emerald-300" />
-              <FloatCard className="right-0 top-24" title="Total ROI" value="200%" accent="text-gold" />
+              <FloatCard className="left-0 top-6" title="AI Trading" value="Active" accent="text-emerald-600 dark:text-emerald-300" />
+              <FloatCard className="right-0 top-24" title="Auto Mining" value="24/7" accent="text-gold" />
               <FloatCard className="bottom-6 left-8" title="Network" value="USDT BEP20" accent="text-brand dark:text-sky-300" />
             </div>
           </Tilt>

@@ -1,7 +1,6 @@
-import { Bot, TrendingUp, ShieldCheck, Clock, Globe2, Pickaxe, UserPlus, GitMerge } from 'lucide-react'
+import { Bot, TrendingUp, ShieldCheck, Clock, Globe2, Cpu, LineChart, Brain, Zap, Lock } from 'lucide-react'
 import Tilt from '../components/Tilt'
 import { Section, Container, SectionHeading, Reveal } from './ui'
-import { incomeTypes } from '../data'
 
 const WORK_PILLS = [
   { icon: Bot, label: 'AI Powered Trading' },
@@ -11,21 +10,32 @@ const WORK_PILLS = [
   { icon: Globe2, label: 'Global Access' },
 ]
 
-const TYPE_ICONS = [Pickaxe, UserPlus, GitMerge]
-const TYPE_CHIPS = [
-  'from-amber-300 to-amber-500 text-amber-950',
-  'from-sky-400 to-blue-600 text-white',
-  'from-emerald-400 to-teal-600 text-white',
+const CAPABILITIES = [
+  {
+    icon: Bot,
+    chip: 'from-sky-400 to-blue-600 text-white',
+    title: 'AI Trading Engine',
+    desc: 'Advanced AI algorithms analyze the markets around the clock and execute optimized strategies automatically — no manual effort required.',
+  },
+  {
+    icon: Cpu,
+    chip: 'from-amber-300 to-amber-500 text-amber-950',
+    title: 'Automated Crypto Mining',
+    desc: 'High-performance mining infrastructure runs 24/7, generating digital assets with maximum efficiency and uptime.',
+  },
+  {
+    icon: LineChart,
+    chip: 'from-emerald-400 to-teal-600 text-white',
+    title: 'Real-Time Analytics',
+    desc: 'Live dashboards, market insights and performance tracking keep you fully informed and in control of your portfolio.',
+  },
 ]
 
-const CAPPING = [
-  ['15 USDT', '15 USDT'],
-  ['100 USDT', '100 USDT'],
-  ['200 USDT', '200 USDT'],
-  ['500 USDT', '500 USDT'],
-  ['1000 USDT', '1000 USDT'],
-  ['2000 USDT', '2000 USDT'],
-  ['5000 USDT', '5000 USDT'],
+const TECH = [
+  { icon: Brain, label: 'Machine Learning Models' },
+  { icon: Lock, label: 'Blockchain Secured' },
+  { icon: Zap, label: 'Smart Automation' },
+  { icon: Clock, label: '99.9% Uptime' },
 ]
 
 export default function Income() {
@@ -62,9 +72,9 @@ export default function Income() {
 
             <Reveal delay={120} className="grid grid-cols-3 gap-3">
               {[
-                { k: 'Growth', v: '85%' },
-                { k: 'Return', v: '73%' },
-                { k: 'Profit', v: '65%' },
+                { k: 'Uptime', v: '24/7' },
+                { k: 'Markets', v: 'Live' },
+                { k: 'Automation', v: '100%' },
               ].map((s) => (
                 <div key={s.k} className="glass-panel rounded-2xl border border-white/15 p-4 text-center">
                   <p className="text-2xl font-extrabold">{s.v}</p>
@@ -75,92 +85,52 @@ export default function Income() {
           </div>
         </div>
 
-        {/* Income types */}
+        {/* Capabilities */}
         <Reveal className="mt-20">
           <SectionHeading
-            kicker="Types of Income"
-            title="Three ways to"
-            highlight="earn & grow"
+            kicker="Platform Capabilities"
+            title="Intelligent technology that"
+            highlight="works for you"
+            subtitle="AI-driven crypto mining and trading — fully automated, transparent and secure."
           />
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {incomeTypes.map((item, i) => {
-            const Icon = TYPE_ICONS[i]
-            return (
-              <Reveal key={item.title} delay={i * 100}>
-                <Tilt max={6}>
-                  <div className="card card-hover h-full p-6">
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${TYPE_CHIPS[i]} shadow-[0_8px_18px_-6px_rgba(37,99,235,0.5)]`}
-                      >
-                        <Icon size={20} />
-                      </span>
-                      <span className="rounded-full border border-line px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted">
-                        0{i + 1}
-                      </span>
-                    </div>
-                    <h3 className="mt-4 text-lg font-bold text-ink">{item.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.desc}</p>
-                    <p className="mt-3 text-base font-bold text-gradient-gold">{item.value}</p>
+          {CAPABILITIES.map((item, i) => (
+            <Reveal key={item.title} delay={i * 100}>
+              <Tilt max={6}>
+                <div className="card card-hover h-full p-6">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${item.chip} shadow-[0_8px_18px_-6px_rgba(37,99,235,0.5)]`}
+                    >
+                      <item.icon size={20} />
+                    </span>
+                    <span className="rounded-full border border-line px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted">
+                      0{i + 1}
+                    </span>
                   </div>
-                </Tilt>
-              </Reveal>
-            )
-          })}
+                  <h3 className="mt-4 text-lg font-bold text-ink">{item.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.desc}</p>
+                </div>
+              </Tilt>
+            </Reveal>
+          ))}
         </div>
 
-        {/* Matching capping */}
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          <Reveal>
-            <div className="card h-full p-7">
-              <h3 className="text-xl font-bold text-ink">Matching Income — 10%</h3>
-              <p className="mt-2 leading-relaxed text-muted">
-                Earn <span className="font-semibold text-ink">10% matching income</span> on left and
-                right teams. First matching is based on{' '}
-                <span className="font-semibold text-brand">1:2 or 2:1</span>, then continues at{' '}
-                <span className="font-semibold text-brand">1:1</span>. Power-leg business volume
-                carries forward.
-              </p>
-              <div className="mt-5 flex items-center gap-4">
-                {['1:2', '2:1', '1:1'].map((r) => (
-                  <div
-                    key={r}
-                    className="flex-1 rounded-xl border border-line bg-app/60 py-4 text-center"
-                  >
-                    <p className="text-2xl font-extrabold text-gradient-gold">{r}</p>
-                    <p className="text-xs text-muted">matching</p>
-                  </div>
-                ))}
+        {/* Technology strip */}
+        <Reveal delay={120}>
+          <div className="mt-10 grid grid-cols-2 gap-4 rounded-2xl border border-line bg-surface/60 p-6 backdrop-blur sm:grid-cols-4">
+            {TECH.map((t) => (
+              <div key={t.label} className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/12 text-brand">
+                  <t.icon size={18} />
+                </span>
+                <p className="text-sm font-semibold text-ink">{t.label}</p>
               </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="card h-full overflow-hidden p-7">
-              <h3 className="text-xl font-bold text-ink">Weekly Matching Capping</h3>
-              <div className="mt-4 overflow-hidden rounded-xl border border-line">
-                <table className="w-full text-left text-sm">
-                  <thead>
-                    <tr className="bg-elevated/70 text-xs uppercase tracking-wider text-muted">
-                      <th className="px-4 py-2.5 font-semibold">Amount (USDT)</th>
-                      <th className="px-4 py-2.5 font-semibold">Weekly Capping</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {CAPPING.map(([a, b], i) => (
-                      <tr key={a} className={i % 2 ? 'bg-app/40' : ''}>
-                        <td className="px-4 py-2 font-medium text-ink">{a}</td>
-                        <td className="px-4 py-2 font-semibold text-gold">{b}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </Section>
   )

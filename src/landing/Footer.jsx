@@ -23,7 +23,7 @@ export default function Footer({ onLaunch }) {
                 Invest in <span className="text-gradient-gold">Brinx</span> Today!
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-white/70">
-                Building wealth. Powered by AI. Start your mining journey from just $15.
+                Building wealth. Powered by AI. Start your automated mining & trading journey today.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <button onClick={onLaunch} className="btn-gold text-base">

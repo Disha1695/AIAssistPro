@@ -11,17 +11,15 @@ const PROJECTS = [
   { icon: ArrowLeftRight, title: 'Crypto Exchange' },
 ]
 
-const TERMS = [
-  'Joining package starts from $15 only.',
-  'Deposit and withdrawal in USDT (BEP20).',
-  'Working income 3x, non-working income 2x — total 5x.',
-  'Re-topup after 200% income in non-working 2x.',
-  'User-to-user fund transfer available (min $15).',
-  'First matching is 1:2 or 2:1, then continues 1:1.',
-  'Power-leg business volume carries forward.',
-  'Matching capping applies Monday to Monday.',
-  'Withdrawals processed every Tuesday, once a week.',
-  'Withdrawal deduction is 15%. 24×7 support available.',
+const HIGHLIGHTS = [
+  'AI-powered crypto mining and trading, fully automated.',
+  'Secure deposits & withdrawals in USDT (BEP20).',
+  'Real-time analytics and 24/7 portfolio monitoring.',
+  'Bank-grade security and blockchain transparency.',
+  'High-performance mining infrastructure with 99.9% uptime.',
+  'Smart machine-learning models that adapt to the market.',
+  'Global access — mine and trade from anywhere.',
+  'Dedicated 24×7 customer support.',
 ]
 
 export default function Projects() {
@@ -52,15 +50,15 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Terms */}
+        {/* Platform highlights */}
         <Reveal className="mt-20">
-          <SectionHeading kicker="Terms & Conditions" title="Clear, transparent" highlight="rules" />
+          <SectionHeading kicker="Why Brinx" title="What makes us" highlight="different" />
         </Reveal>
 
         <Reveal>
           <div className="mt-10 card p-7">
             <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
-              {TERMS.map((t) => (
+              {HIGHLIGHTS.map((t) => (
                 <li key={t} className="flex items-start gap-3 text-sm">
                   <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-positive" />
                   <span className="text-muted">{t}</span>

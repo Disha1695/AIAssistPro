@@ -7,8 +7,8 @@ import { Container } from './ui'
 const LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Mining', href: '#mining' },
-  { label: 'Income', href: '#income' },
-  { label: 'Packages', href: '#packages' },
+  { label: 'Technology', href: '#income' },
+  { label: 'How It Works', href: '#packages' },
   { label: 'Projects', href: '#projects' },
 ]
 

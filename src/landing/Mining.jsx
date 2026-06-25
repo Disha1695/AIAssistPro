@@ -26,7 +26,7 @@ const BENEFITS = [
   { icon: PiggyBank, title: 'Passive Income', desc: 'Earn consistent rewards by contributing to the blockchain network.' },
   { icon: Lock, title: 'Network Security', desc: 'Strengthen and secure the blockchain through decentralized validation.' },
   { icon: Network, title: 'Decentralization', desc: 'Support a decentralized ecosystem, reducing reliance on central authorities.' },
-  { icon: Pickaxe, title: 'Low Entry Barrier', desc: 'Start mining with accessible hardware and flexible options from just $15.' },
+  { icon: Pickaxe, title: 'Low Entry Barrier', desc: 'Start mining with accessible, flexible options — no expensive hardware or setup required.' },
   { icon: TrendingUp, title: 'High Return Potential', desc: 'Maximize rewards with efficient strategies and the right technology.' },
   { icon: Globe2, title: 'Supports the Future', desc: 'Empower the next generation of financial innovation, worldwide.' },
 ]
