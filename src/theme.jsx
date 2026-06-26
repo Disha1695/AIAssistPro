@@ -1,26 +1,33 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext({ theme: 'dark', toggle: () => {} })
+const ThemeContext = createContext({ theme: "dark", toggle: () => {} });
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'dark'
-  const saved = localStorage.getItem('aida-theme')
-  if (saved === 'light' || saved === 'dark') return saved
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  if (typeof window === "undefined") return "dark";
+  const saved = localStorage.getItem("aida-theme");
+  if (saved === "light" || saved === "dark") return saved;
+  return "dark";
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(getInitialTheme)
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    const root = document.documentElement
-    root.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('aida-theme', theme)
-  }, [theme])
+    const root = document.documentElement;
+    root.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("aida-theme", theme);
+  }, [theme]);
 
-  const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
-  return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={{ theme, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }
 
-export const useTheme = () => useContext(ThemeContext)
+export const useTheme = () => useContext(ThemeContext);

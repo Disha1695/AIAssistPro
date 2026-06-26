@@ -1,6 +1,7 @@
 import { ArrowRight, PlayCircle, Brain, Pickaxe, ShieldCheck, Globe2 } from 'lucide-react'
 import Coin from '../components/Coin'
 import Tilt from '../components/Tilt'
+import Typewriter from '../components/Typewriter'
 import { Container } from './ui'
 
 const PILLS = [
@@ -17,16 +18,20 @@ const STATS = [
   { value: 'USDT', label: 'Secure Payouts' },
 ]
 
-function FloatCard({ className, title, value, accent }) {
+function FloatCard({ className, title, value, accent, delay = 0 }) {
   return (
     <div
-      className={`absolute rounded-2xl border border-line bg-surface px-4 py-3 shadow-lift dark:border-white/15 dark:bg-white/10 dark:text-white dark:shadow-3d dark:backdrop-blur ${className}`}
+      style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
+      className={`absolute animate-fade-in rounded-2xl border border-line bg-surface px-4 py-3 shadow-lift dark:border-white/15 dark:bg-white/10 dark:text-white dark:shadow-3d dark:backdrop-blur ${className}`}
     >
       <p className="text-[11px] uppercase tracking-wider text-muted dark:text-white/60">{title}</p>
       <p className={`text-lg font-bold ${accent}`}>{value}</p>
     </div>
   )
 }
+
+// helper for sequential entrance animation
+const step = (d) => ({ animationDelay: `${d}ms`, animationFillMode: 'both' })
 
 export default function Hero({ onLaunch }) {
   return (
@@ -61,21 +66,42 @@ export default function Hero({ onLaunch }) {
       <Container className="relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
         {/* copy */}
         <div className="text-ink dark:text-white">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-soft dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:shadow-none">
+          <span
+            style={step(80)}
+            className="inline-flex animate-fade-in items-center gap-2 rounded-full border border-brand/25 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand shadow-soft dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:shadow-none"
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" /> AI-Powered Crypto Mining
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-            Welcome to <br />
-            <span className="text-gradient-gold">Brinx.world</span>
+            <span style={step(220)} className="block animate-fade-in">
+              Welcome to
+            </span>
+            <span style={step(360)} className="block animate-fade-in text-gradient-gold">
+              Brinx.world
+            </span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base font-medium leading-relaxed text-ink/80 dark:font-normal dark:text-white/75 sm:text-lg">
+          <div
+            style={step(500)}
+            className="mt-4 flex animate-fade-in items-center text-xl font-bold tracking-tight sm:text-2xl"
+          >
+            <span className="text-muted dark:text-white/60">Powered by&nbsp;</span>
+            <Typewriter
+              words={['AI Crypto Mining', 'Automated Trading', 'Smart Analytics', 'Real Digital Wealth']}
+              className="text-gradient-brand"
+            />
+          </div>
+
+          <p
+            style={step(640)}
+            className="mt-5 max-w-xl animate-fade-in text-base font-medium leading-relaxed text-ink/80 dark:font-normal dark:text-white/75 sm:text-lg"
+          >
             A next-generation crypto mining platform powered by advanced blockchain technology and
             intelligent automation — built for reliability, transparency and real digital wealth.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div style={step(800)} className="mt-8 flex animate-fade-in flex-wrap gap-3">
             <button onClick={onLaunch} className="btn-gold text-base">
               Start Now <ArrowRight size={18} />
             </button>
@@ -88,10 +114,11 @@ export default function Hero({ onLaunch }) {
           </div>
 
           <div className="mt-9 flex flex-wrap gap-2.5">
-            {PILLS.map((p) => (
+            {PILLS.map((p, i) => (
               <span
                 key={p.label}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold text-ink shadow-soft dark:border-white/15 dark:bg-white/5 dark:font-medium dark:text-white/85 dark:shadow-none"
+                style={step(960 + i * 110)}
+                className="inline-flex animate-fade-in items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-semibold text-ink shadow-soft dark:border-white/15 dark:bg-white/5 dark:font-medium dark:text-white/85 dark:shadow-none"
               >
                 <p.icon size={14} className="text-gold" /> {p.label}
               </span>
@@ -107,9 +134,9 @@ export default function Hero({ onLaunch }) {
               <div className="absolute h-72 w-72 animate-spin-slow rounded-full border border-dashed border-brand/25 dark:border-white/15" />
               <div className="absolute h-56 w-56 rounded-full border border-brand/15 dark:border-white/10" />
               <Coin size={184} />
-              <FloatCard className="left-0 top-6" title="AI Trading" value="Active" accent="text-emerald-600 dark:text-emerald-300" />
-              <FloatCard className="right-0 top-24" title="Auto Mining" value="24/7" accent="text-gold" />
-              <FloatCard className="bottom-6 left-8" title="Network" value="USDT BEP20" accent="text-brand dark:text-sky-300" />
+              <FloatCard className="left-0 top-6" title="AI Trading" value="Active" accent="text-emerald-600 dark:text-emerald-300" delay={1000} />
+              <FloatCard className="right-0 top-24" title="Auto Mining" value="24/7" accent="text-gold" delay={1160} />
+              <FloatCard className="bottom-6 left-8" title="Network" value="USDT BEP20" accent="text-brand dark:text-sky-300" delay={1320} />
             </div>
           </Tilt>
         </div>
